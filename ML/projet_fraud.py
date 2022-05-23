@@ -520,4 +520,4 @@ from joblib import dump, load
 
 dump(model_log, '../Model/LogisticRegression_model.joblib') 
 dump(dtc, '../Model/DecisionTreeClassifier_model.joblib') 
-dump(rfc, '../Model/RandomForestClassifier_model.joblib') 
+dump(rfc, '../Model/RandomForestClassifier_model.joblib', compress=3) 

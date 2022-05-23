@@ -1,0 +1,51 @@
+version: "3.9"
+services:
+  fraud_api:
+    image: fraud_api:1.0.0
+    container_name: fastapi_container
+    networks:
+      - mon_reseau
+  authentification:
+    image: performance_image
+    container_name: performance_container
+    depends_on:
+      fraud_api:
+        condition: service_started
+    links: 
+      - fraud_api
+    networks:
+      - mon_reseau
+    volumes:
+      - /var/lib/docker/volumes/docker_fraud/_data:/Fraud-api
+    environment:
+      LOG: 1
+  prediction:
+    image: prediction_image
+    container_name: prediction_container
+    depends_on:
+      fraud_api:
+        condition: service_started
+    links:
+      - fraud_api
+    networks:
+      - mon_reseau
+    volumes:
+      - /var/lib/docker/volumes/docker_fraud/_data:/Fraud-api
+    environment:
+      LOG: 1
+  transactionPrediction:
+    image: transactionPrediction_image
+    container_name: transactionPrediction_container
+    depends_on:
+      fraud_api:
+        condition: service_started
+    links:
+      - fraud_api
+    networks:
+      - mon_reseau
+    volumes:
+      - /var/lib/docker/volumes/docker_fraud/_data:/Fraud-api
+    environment:
+      LOG: 1
+networks:
+  mon_reseau:
