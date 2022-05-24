@@ -172,7 +172,7 @@ async def getPerformance(modele: str, username: str = Depends(getLoginAuthentifi
         )
 
 @api.get('/prediction', name='Predire en fonction du modele', tags=['Prediction'])
-async def predireFichier(modele: str, username: str = Depends(getLoginAuthentifie)):
+async def predire(modele: str, username: str = Depends(getLoginAuthentifie)):
     """Cette fonction renvoie les predictions de fraudes par rapport au modele choisi.\n
        MODEL : log (LogisticRegression) / dtc (Decision Tree Classification) / rfc (Random Forest Classification)
     """

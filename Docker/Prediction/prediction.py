@@ -8,7 +8,7 @@ api_address = 'fastapi_container'
 api_port = 8000
 
 # requête
-r = requests.post(
+r = requests.get(
     url='http://{address}:{port}/prediction'.format(address=api_address, port=api_port), auth=HTTPBasicAuth('alice', 'wonderland'),
     params= {
         'model': 'log'
