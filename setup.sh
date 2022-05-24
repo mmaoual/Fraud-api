@@ -3,8 +3,7 @@ echo "setup and run FRAUD PROJECT docker-compose ..."
 docker volume create --name docker_fraud
 docker network create --subnet 172.55.0.0/16 --gateway 172.55.0.1 mon_reseau
 cd ~/Fraud-api/
-cd API
-docker image build . -t fraud_api:1.0.0
+docker image build . -t fraud_api:1.0.0 -f API/Dockerfile
 cd ..
 cd Docker/Performance/
 docker image build . -t performance_image:latest
