@@ -33,9 +33,9 @@ services:
       - /var/lib/docker/volumes/docker_fraud/_data:/Fraud-api
     environment:
       LOG: 1
-  transactionPrediction:
-    image: transactionPrediction_image
-    container_name: transactionPrediction_container
+  transactionprediction:
+    image: transactionprediction_image
+    container_name: transactionprediction_container
     depends_on:
       fraud_api:
         condition: service_started

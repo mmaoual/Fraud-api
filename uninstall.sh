@@ -10,5 +10,5 @@ docker volume rm docker_fraud
 docker network rm mon_reseau
 docker image rm -f performance_image:latest
 docker image rm -f prediction_image:latest
-docker image rm -f transactionPrediction_image:latest
+docker image rm -f transactionprediction_image:latest
 echo "uninstall done."
