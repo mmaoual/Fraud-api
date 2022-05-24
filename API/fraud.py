@@ -171,7 +171,7 @@ async def getPerformance(modele: str, username: str = Depends(getLoginAuthentifi
             detail='Type Inconnu'
         )
 
-@api.post('/prediction', name='Predire en fonction du modele', tags=['Prediction'])
+@api.get('/prediction', name='Predire en fonction du modele', tags=['Prediction'])
 async def predireFichier(modele: str, username: str = Depends(getLoginAuthentifie)):
     """Cette fonction renvoie les predictions de fraudes par rapport au modele choisi.\n
        MODEL : log (LogisticRegression) / dtc (Decision Tree Classification) / rfc (Random Forest Classification)
@@ -208,11 +208,11 @@ async def predire(modele: str, transactions: List[Transaction], username: str = 
     
     try:
         if (modele=="log"):
-            mod=load('./Model/LogisticRegression_model.joblib')
+            mod=load('../Model/LogisticRegression_model.joblib')
         elif (modele=="dtc"):
-            mod=load('./Model/DecisionTreeClassifier_model.joblib')
+            mod=load('../Model/DecisionTreeClassifier_model.joblib')
         elif (modele=="rfc"):
-            mod=load('./Model/RandomForestClassifier_model.joblib')
+            mod=load('../Model/RandomForestClassifier_model.joblib')
 
         transactionsPred = []
         for index, transaction in enumerate(transactions):
