@@ -23,7 +23,7 @@ GET /performance
 
 Cette fonction renvoie les performance d'un modele MODEL : log (LogisticRegression) / dtc (Decision Tree Classification) / rfc (Random Forest Classification)
 
-POST /prediction
+GET /prediction
 
 Cette fonction renvoie les predictions pour un modèle donné.
 
