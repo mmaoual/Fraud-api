@@ -4,4 +4,4 @@ ADD Model/DecisionTreeClassifier_model.joblib Model/LogisticRegression_model.job
 ADD API/requirements.txt API/fraud.py ./
 RUN apt-get update && apt-get install python3-pip -y && pip install -r ./requirements.txt
 EXPOSE 8000
-CMD uvicorn strokes:server --host 0.0.0.0
+CMD uvicorn fraud:api --host 0.0.0.0
