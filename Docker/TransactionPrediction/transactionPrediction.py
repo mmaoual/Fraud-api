@@ -11,7 +11,7 @@ api_port = 8000
 r = requests.post(
     url='http://{address}:{port}/transaction/prediction'.format(address=api_address, port=api_port), auth=HTTPBasicAuth('alice', 'wonderland'),
     params= {
-        'model': 'log'
+        'modele': 'log'
     },
     json=[
          {
@@ -33,7 +33,7 @@ output = '''
 ============================
 
 request done at "/transaction/prediction"
-| model="log"
+| modele="log"
 
 expected result = [1]
 actual result = {result}
