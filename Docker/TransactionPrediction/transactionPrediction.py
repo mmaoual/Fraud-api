@@ -35,7 +35,7 @@ output = '''
 request done at "/transaction/prediction"
 | modele="log"
 
-expected result = [1]
+expected result = [1.0]
 actual result = {result}
 
 ==>  {test_status}
@@ -59,5 +59,5 @@ log=os.environ.get('LOG')
 # impression dans un fichier
 if int(log) == 1:
     with open('api_test.log', 'a') as file:
-        file.write(output.format(status_code=status_code, test_status=test_status))
+        file.write(output.format(result=result, test_status=test_status))
 

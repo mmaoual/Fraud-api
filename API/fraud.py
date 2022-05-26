@@ -20,7 +20,7 @@ import secrets
 import uvicorn
 
 # Importer les données du fichier Fraud.csv dans un DataFrame
-df = pd.read_csv('https://assets-datascientest.s3-eu-west-1.amazonaws.com/de/total/fraud.csv')
+df = pd.read_csv('fraud.csv')
 
 # Création de la variable time_diff = différence entre l'heure de la connextion et l'heure d'achat
 df['signup_time'] = pd.to_datetime(df['signup_time'])
@@ -145,11 +145,11 @@ async def getPerformance(modele: str, username: str = Depends(getLoginAuthentifi
 
     try:
         if (modele=="log"):
-            mod=load('../Model/LogisticRegression_model.joblib')
+            mod=load('LogisticRegression_model.joblib')
         elif (modele=="dtc"):
-            mod=load('../Model/DecisionTreeClassifier_model.joblib')
+            mod=load('DecisionTreeClassifier_model.joblib')
         elif (modele=="rfc"):
-            mod=load('../Model/RandomForestClassifier_model.joblib')
+            mod=load('RandomForestClassifier_model.joblib')
 
         preds = mod.predict(X_test)
         performance = {
@@ -178,11 +178,11 @@ async def predire(modele: str, username: str = Depends(getLoginAuthentifie)):
     """
     try:
         if (modele=="log"):
-            mod=load('../Model/LogisticRegression_model.joblib')
+            mod=load('LogisticRegression_model.joblib')
         elif (modele=="dtc"):
-            mod=load('../Model/DecisionTreeClassifier_model.joblib')
+            mod=load('DecisionTreeClassifier_model.joblib')
         elif (modele=="rfc"):
-            mod=load('../Model/RandomForestClassifier_model.joblib')
+            mod=load('RandomForestClassifier_model.joblib')
             
         pred = mod.predict(X_test)
         pred_lists = pred.tolist()
@@ -208,11 +208,11 @@ async def predire(modele: str, transactions: List[Transaction], username: str = 
     
     try:
         if (modele=="log"):
-            mod=load('../Model/LogisticRegression_model.joblib')
+            mod=load('LogisticRegression_model.joblib')
         elif (modele=="dtc"):
-            mod=load('../Model/DecisionTreeClassifier_model.joblib')
+            mod=load('DecisionTreeClassifier_model.joblib')
         elif (modele=="rfc"):
-            mod=load('../Model/RandomForestClassifier_model.joblib')
+            mod=load('RandomForestClassifier_model.joblib')
 
         transactionsPred = []
         for index, transaction in enumerate(transactions):
