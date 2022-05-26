@@ -42,3 +42,5 @@ Example value: [
                 "age": "23",
             }
     ]
+
+Kubernetes : Un déploiement, un service et un Ingress ont été créés pour déployer l'API sur 3 Pods minimum.
