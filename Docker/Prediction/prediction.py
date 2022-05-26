@@ -11,7 +11,7 @@ api_port = 8000
 r = requests.get(
     url='http://{address}:{port}/prediction'.format(address=api_address, port=api_port), auth=HTTPBasicAuth('alice', 'wonderland'),
     params= {
-        'model': 'log'
+        'modele': 'log'
     }
 )
 
@@ -21,7 +21,7 @@ output = '''
 ============================
 
 request done at "/prediction"
-| model="log"
+| modele="log"
 
 expected result = [1,1,1,1......,0,0,0,0,0]
 actual result = {status_code}

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Ingress
+metadata:
+  name: my-fraud-ingress
+spec:
+  defaultBackend:
+    service:
+      name: my-fraud-service
+      port:
+        number: 8001

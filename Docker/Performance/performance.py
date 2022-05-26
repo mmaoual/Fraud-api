@@ -11,7 +11,7 @@ api_port = 8000
 r = requests.get(
     url='http://{address}:{port}/performance'.format(address=api_address, port=api_port), auth=HTTPBasicAuth('alice', 'wonderland'),
     params={
-        'model': 'log'
+        'modele': 'log'
     }
 )
 
@@ -21,7 +21,7 @@ output = '''
 ============================
 
 request done at "/performance"
-| model="log"
+| modele="log"
 
 expected result = accuracy: ?, precision: ?, 'recall: ?, f1_score: ?, mcc: ?
 actual result = {result}

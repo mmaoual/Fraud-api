@@ -11,7 +11,9 @@ docker image build . -t prediction_image:latest
 cd ../TransactionPrediction/
 docker image build . -t transactionprediction_image:latest
 cd ..
-sudo cp Performance/performance.py /var/lib/docker/volumes/docker_fraud/_data/prediction.py
+sudo cp Performance/performance.py /var/lib/docker/volumes/docker_fraud/_data/performance.py
 sudo cp Prediction/prediction.py /var/lib/docker/volumes/docker_fraud/_data/prediction.py
 sudo cp TransactionPrediction/transactionPrediction.py /var/lib/docker/volumes/docker_fraud/_data/transactionPrediction.py
+# sous windows on remplace par /var/lib/docker/volumes/docker_fraud/_data/ \\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes\docker_fraud\_data
+
 docker-compose up
