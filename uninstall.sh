@@ -11,4 +11,5 @@ docker network rm mon_reseau
 docker image rm -f performance_image:latest
 docker image rm -f prediction_image:latest
 docker image rm -f transactionprediction_image:latest
+docker image rm -f fraud_api:1.0.0
 echo "uninstall done."
