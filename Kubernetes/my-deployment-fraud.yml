@@ -15,7 +15,7 @@ spec:
         app: my-fraud-api
     spec:
       containers:
-      - name: container-fastapi
-        image: Fraud-api/fraud-api:latest
+      - name: fastapi_container
+        image: mmaoual/fraud_api:1.0.0
         ports:
         - containerPort: 8000
