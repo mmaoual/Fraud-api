@@ -1,4 +1,3 @@
-#!/bin/sh
 echo "setup and run FRAUD PROJECT docker-compose ..."
 docker volume create --name docker_fraud
 docker network create --subnet 172.55.0.0/16 --gateway 172.55.0.1 mon_reseau
@@ -10,9 +9,9 @@ docker image build . -t prediction_image:latest
 cd ../TransactionPrediction/
 docker image build . -t transactionprediction_image:latest
 cd ..
-sudo cp Performance/performance.py /var/lib/docker/volumes/docker_fraud/_data/performance.py
-sudo cp Prediction/prediction.py /var/lib/docker/volumes/docker_fraud/_data/prediction.py
-sudo cp TransactionPrediction/transactionPrediction.py /var/lib/docker/volumes/docker_fraud/_data/transactionPrediction.py
+xcopy /y "Performance\performance.py" "\\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes\docker_fraud\_data"
+xcopy /y "Prediction\prediction.py" "\\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes\docker_fraud\_data"
+xcopy /y "TransactionPrediction\transactionPrediction.py" "\\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes\docker_fraud\_data"
 
 docker-compose up
 cd ..
