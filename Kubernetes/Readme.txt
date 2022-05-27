@@ -1,11 +1,22 @@
+# TEST & EXECUTION
+
+# console 1 :
+minikube start
+minikube dashboard --url=true
+# on peut fermer la console 1 après
+
+# console 2 :
+kubectl proxy --address='0.0.0.0' --disable-filter=true
+
+# console 3 :
 kubectl create -f my-deployment-fraud.yml
 kubectl get deployment
 
 # si necessaire
-kubect delete deployments my-fraud-deployment
+kubectl delete deployment my-deployment-fraud
 
 kubectl create -f my-service-fraud.yml
-kubectl get deployment
+kubectl get service
 
 # si necessaire
 kubect delete service my-fraud-service
@@ -13,15 +24,9 @@ kubect delete service my-fraud-service
 kubectl create -f my-ingress-fraud.yml
 kubectl get ingress
 
-# console 1 :
-minikube start
-minikube dashboard --url=true
-# on peut fermer la console 1 après
+console windows cmd : 
+# pont avec la machine locale
+ssh -i "data_enginering_machine.pem" ubuntu@<ip machine> -fNL 8000:192.168.49.2:80
 
-
-# console 2 :
-kubectl proxy --address='0.0.0.0' --disable-filter=true
-
-# http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/pod?namespace=default
-# http://localhost:8001/api/v1/namespaces/default/services/my-fraud-service/proxy/
-# http://localhost:8001/api/v1/namespaces/default/services/my-fraud-service/proxy/performance?model=log
+# acces api via navigateur
+http://localhost:8000/docs
