@@ -2,7 +2,7 @@ version: "3.9"
 services:
   fraud_api:
     image: mmaoual/fraud_api:1.0.0
-    container_name: fastapi_container
+    container_name: fastapi-container
     networks:
       - mon_reseau
   performance:

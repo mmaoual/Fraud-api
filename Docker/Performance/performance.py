@@ -3,7 +3,7 @@ import requests
 from requests.auth import HTTPBasicAuth
 
 # définition de l'adresse de l'API
-api_address = 'fastapi_container'
+api_address = 'fastapi-container'
 # port de l'API
 api_port = 8000
 
